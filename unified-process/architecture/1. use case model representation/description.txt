@@ -1,0 +1,5 @@
+The main use cases, defining the architecture of the bittorrent client are:
+a) the user downloads torrent content, specifiing parameters (selected files, their names, location, priority),
+seeds it after completion;
+b) sees the list of downloading torrents;
+c) sees the list of seeding torrents, removes them.

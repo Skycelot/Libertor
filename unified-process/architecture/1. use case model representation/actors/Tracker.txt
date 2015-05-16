@@ -1,0 +1,1 @@
+A coordinator of bittorrent network, holding information about torrents and participants, involved in downloading/seeding these torrents.
