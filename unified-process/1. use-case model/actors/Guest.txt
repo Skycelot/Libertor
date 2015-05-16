@@ -1,0 +1,1 @@
+External participants of a bittorrent network that seed/download segments for/from the user's bittorrent client. 

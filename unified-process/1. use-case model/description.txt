@@ -1,0 +1,9 @@
+A user downloads torrent content, specifiing parameters (selected files, their names, location, priority),
+seeds it after comletion.
+Changes torrent parameters during downloading.
+Sees the list of downloading torrents, changes the number of simultanious downloads,
+their order, priority.
+Sees the list of seeding torrents with statistics, stops or removes them.
+Starts seeding new torrents or torrents from history, pointing to the location of its content.
+Sets the limits of speed for downloading/seeding.
+Sees the historical torrents with staticstics.

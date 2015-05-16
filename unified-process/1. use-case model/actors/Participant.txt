@@ -1,0 +1,1 @@
+A participant of a bittorrent newtwork, that offers or requests segments of torrents content.
