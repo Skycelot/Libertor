@@ -1,5 +1,5 @@
-A user downloads torrent content, specifiing parameters (selected files, their names, location, priority),
-seeds it after completion.
+The user downloads or queues the download of torrent content, specifiing parameters (selected files, their names, location, priority),
+seeds it and launches the next download from the queue if any after completion.
 Changes torrent parameters during downloading.
 Sees the list of downloading torrents, changes the number of simultanious downloads,
 their order, priority.

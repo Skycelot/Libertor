@@ -1,7 +1,8 @@
-1. User downloads torrent file from his tracker.
+1. The user downloads torrent file from his tracker.
 2. Opens downloaded torrent file in the bittorrent client.
-3. Set final parameters for downloading data:
+3. Sets final parameters for downloading data:
   a) a single-file torrent: the location and the name of the file;
-  b) a multi-file torrent: the location and name of the directory, chosen for download files and their names, names of intermediate directories.
-4. The bittorrent starts downloading torrent content.
+  b) a multi-file torrent: the location and name of the directory, chosen for download files and their priorities and names, names of intermediate directories.
+4. The bittorrent starts downloading torrent content or places at the end of the download queue the download, if the number of downloads has already reached the maximum number of simultaneous downloads. 
 5. When the torrent content is downloaded the bittorrent client continues seeding the torrent content.
+6. If there are downloads in the download queue than start download the first download from the queue.

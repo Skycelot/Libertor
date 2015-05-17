@@ -1,0 +1,4 @@
+1. From the downloading list the user selects the torrent whose parameters he wants to change.
+2. For the selected downloading torrent the user can change parameters:
+a) for single file: the location, the name of the downloaded file.
+b) for milti-files: the location, the name of the downloading directory, selected files for downloading, their priorities, their names and the names of the intermidiate directories.
