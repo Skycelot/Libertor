@@ -1,3 +1,4 @@
 1. From the list of downloading torrents the user interchanges the torrent's relative order number with the previous or next one.
 2. With the order number the torrents change their status.
-If the status does change, the torrent that was queued starts and the torrent that was downloading stops and go to the queue.
+If the status does change, the torrent that was queued starts with the other torrent's speed precedency and the torrent that was downloading stops and go to the queue.
+3. If both torrents are downloading (not queued) they also change their speed precedency.

@@ -1,0 +1,4 @@
+1. The user moves to other location or removes files that are seeding.
+2. The bittorrent client gets notification about its seeding file from the file system.
+3. If there are other files in the torrent, the bittorent client continues seeding the torrent without (re)moved files.
+4. Otherwise the bittorent client removes the torrent from the seeding list and moves the torrent in the archive.

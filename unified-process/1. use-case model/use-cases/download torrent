@@ -3,6 +3,10 @@
 3. Sets final parameters for downloading data:
   a) a single-file torrent: the location and the name of the file;
   b) a multi-file torrent: the location and name of the directory, chosen for download files and their priorities and names, names of intermediate directories.
-4. The bittorrent starts downloading torrent content or places at the end of the download queue the download, if the number of downloads has already reached the maximum number of simultaneous downloads. 
-5. When the torrent content is downloaded the bittorrent client continues seeding the torrent content.
-6. If there are downloads in the download queue than start download the first download from the queue.
+4. The bittorrent places the torrent at the end of the download list, assignes its the next order number.
+5. If the number of downloading torrents less then the maximum number of simultaneous downloads, bittorent starts downloading torrent content with the speed precedency corresponding to its order number.
+7. When the torrent content is downloaded the bittorrent client removes the torrent from downloading list, places it in the seeding list and continues seeding the torrent content.
+8. If the downloading torrent list is not empty: 
+a) the bittorrent client increments the order number of torrents in the downloading list by one;
+b) if there is a torrent in the downloading list with the order number that equals the maximum number of simultaneous downloads then the bittorrent client starts it.
+c) the speed precedency of downloading torrents is changed accordingly to their new order numbers.
