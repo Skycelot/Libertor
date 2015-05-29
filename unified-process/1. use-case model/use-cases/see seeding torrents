@@ -1,3 +1,4 @@
-1. The user opens list of currently seeding torrents that shows him the information:
-the name of seeding file or directory, the size of torrent data, the current seeding speed, the size of seeded data.
+1. The user opens the list of currently seeding torrents that shows him the information:
+the name of seeding file or directory, the size of torrent data, the size of downloaded data, the current seeding speed, the size of seeded data, 
+the time the torrent was added to the list of downloading torrents, the time the torrent was added to the list of seeding torrents.
 2. The information is constantly refreshing untill the user quits.

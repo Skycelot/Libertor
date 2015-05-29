@@ -1,9 +1,9 @@
 The user downloads or queues the download of torrent content, specifying parameters (selected files, their names, location, priority),
 seeds it and launches the next download from the queue if any after completion.
 Changes torrent parameters during downloading.
-Sees the list of downloading torrents, changes the number of simultanious downloads, their order.
+Sees the list of downloading torrents, changes the number of simultanious downloads, their order, removes them.
 Sees the list of seeding torrents with statistics, removes them.
-Moves seeding files to other location from external file manager or removes them.
+Renames, moves seeding files to other location from external file manager or removes them.
 Selects other files for downloading from partially downloaded torrents.
 Sets the limits of speed for downloading/seeding.
 Sees the historical torrents with staticstics.

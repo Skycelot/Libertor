@@ -1,0 +1,4 @@
+1. The user opens the list of historical torrents that shows him the information:
+the name of seeding file or directory, the size of torrent data, the time the torrent was added to the list of downloading torrents, 
+the time the torrent was added to the list of seeding torrents, the time the torrent was removed from the list of seeding torrents,
+the reason why the torrent was removed from the seeding list, the size of downloaded data, the size of seeded data.

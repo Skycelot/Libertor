@@ -1,0 +1,5 @@
+1. The user downloads torrent file from his tracker or opens the list of historical torrents.
+2. Opens downloaded torrent file in the bittorrent client or selects the torrent from the history.
+3. Points to the file or directory of the torrent content.
+4. The bittorrent client checks if the pointed file of directory matches the torrent's content.
+5. If matches then it places the torrent in the list of seeding torrents and starts seeding it.

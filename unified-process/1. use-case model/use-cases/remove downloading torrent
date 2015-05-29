@@ -1,0 +1,5 @@
+1. From the list of downloading torrents the user selects the torrent he wants to stop downloading.
+2. The user removes the selected torrent from the list.
+3. The bittorrent client stops further downloading that torrent content.
+4. Removes the downloaded data from the disk.
+5. Puts the torrent info in the archive.

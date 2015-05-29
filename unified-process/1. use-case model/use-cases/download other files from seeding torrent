@@ -1,9 +1,8 @@
-1. The user downloads torrent file from his tracker or opens the list of historical torrents.
-2. Opens downloaded torrent file in the bittorrent client or selects the torrent from the history.
-3. Sets final parameters for downloading data:
-  a) a single-file torrent: the location and the name of the file;
-  b) a multi-file torrent: the location and name of the directory, chosen for download files and their priorities and names, names of intermediate directories.
-4. The bittorrent places the torrent at the end of the download list, assignes its the next order number.
+1. The user opens the list of seeding torrents.
+2. Selects the torrent that is not completely downloaded.
+3. Selects the files from it that he wants to download.
+4.  to the list of downloading torrents at its end.
+4. The bittorrent moves the torrent from the list of seeding torrents at the end of the download list, assignes its the next order number.
 5. If the number of downloading torrents less then the maximum number of simultaneous downloads, bittorent starts downloading torrent content with the speed precedency corresponding to its order number.
 7. When the torrent content is downloaded the bittorrent client removes the torrent from downloading list, places it in the seeding list and continues seeding the torrent content.
 8. If the downloading torrent list is not empty: 

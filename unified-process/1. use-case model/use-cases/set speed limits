@@ -1,0 +1,2 @@
+1. The user changes the speed of downloading (uploading).
+2. The bittorrent starts (if the limit is set) or stops (if the limit is removed) controlling the overall channel speed.
