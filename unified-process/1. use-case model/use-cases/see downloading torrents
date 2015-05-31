@@ -1,4 +1,4 @@
 1. The user opens the list of currently downloading torrents that shows him the information:
-the name of downloading file or directory, the size of torrent data, the completed percentage of downloaded content, 
+the order number, the name of downloading file or directory, the size of torrent data, the completed percentage of downloaded content, 
 the current downloading speed, the estimated remaining time to download, the time the torrent was added to the list of downloading torrents.
 2. The information is constantly refreshing untill the user quits.

@@ -5,7 +5,6 @@ Ext.application({
         "PrototypeRouter"
     ],
     launch: function () {
-        application = this;
         console.log("Application has launched.");
     }
 });
