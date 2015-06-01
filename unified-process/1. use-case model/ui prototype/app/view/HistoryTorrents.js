@@ -25,7 +25,7 @@ Ext.define("Libertor.view.HistoryTorrents", {
             flex: 3
         },
         {
-            header: "Removed date",
+            header: "Removal date",
             dataIndex: "removedDate",
             flex: 3
         },

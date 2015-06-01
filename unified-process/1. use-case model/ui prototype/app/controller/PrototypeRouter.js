@@ -4,7 +4,8 @@ Ext.define("Libertor.controller.PrototypeRouter", {
         "DownloadingTorrents", "SeedingTorrents", "HistoryTorrents"
     ],
     views: [
-        "TorrentGroups", "DownloadingTorrents", "SeedingTorrents", "HistoryTorrents", "StatusBar"
+        "TorrentGroups", "DownloadingTorrents", "SeedingTorrents", "HistoryTorrents", "StatusBar",
+        "AddTorrent", "SelectTorrentFile", "TorrentSingleFileParameters", "TorrentMultiFileParameters"
     ],
     refs: [
         {
@@ -13,13 +14,27 @@ Ext.define("Libertor.controller.PrototypeRouter", {
         }, {
             ref: "torrentGroups",
             selector: "viewport > torrentgroups"
+        }, {
+            ref: "addTorrent",
+            selector: "addtorrent"
         }
     ],
     selectedTorrentGroup: "d",
     init: function () {
-        this.control("torrentgroups", {
-            itemclick: this.selectTorrentGroup,
-            afterrender: this.defaultView
+        this.control({
+            "torrentgroups": {
+                itemclick: this.selectTorrentGroup,
+                afterrender: this.defaultView
+            },
+            "downloadingtorrents #add": {
+                click: this.addTorrent
+            },
+            "addtorrent #torrentparams": {
+                click: this.setTorrentParams
+            },
+            "addtorrent #confirm": {
+                click: this.confirmAddTorrent
+            }
         });
         console.log("PrototypeRouter has been initialized.");
     },
@@ -52,8 +67,26 @@ Ext.define("Libertor.controller.PrototypeRouter", {
                     actualIndex = false;
             }
             if (actualIndex) {
-                this.selectedTorrentGroup = groupId;
+                this.selectedTorrentGroup = groupId;    items: [
+        {
+            xtype: "button",
+            title: "OK",
+            itemId: "confirm"
+        }
+    ]
+
             }
         }
+    },
+    addTorrent: function () {
+        console.log("Add button was clicked");
+        Ext.create("widget.addtorrent").show();
+    },
+    setTorrentParams: function () {
+        this.getAddTorrent().removeAll();
+        this.getAddTorrent().add(Ext.create("widget.singlefileparams"));
+    },
+    confirmAddTorrent: function () {
+        this.getAddTorrent().close();
     }
 });

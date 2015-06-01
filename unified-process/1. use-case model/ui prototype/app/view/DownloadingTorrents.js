@@ -44,7 +44,8 @@ Ext.define("Libertor.view.DownloadingTorrents", {
         {
             xtype: "button",
             icon: "resources/img/plus.png",
-            tooltip: "Add torrent"
+            tooltip: "Add torrent",
+            itemId: "add"
         }, {
             xtype: "button",
             icon: "resources/img/cross.png",
