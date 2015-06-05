@@ -49,12 +49,14 @@ Ext.define("Libertor.view.HistoryTorrents", {
         {
             xtype: "button",
             icon: "resources/img/login.png",
-            tooltip: "Start downloading torrent"
+            tooltip: "Start downloading torrent",
+            itemId: "download"
         },
         {
             xtype: "button",
             icon: "resources/img/logout.png",
-            tooltip: "Start seeding torrent"
+            tooltip: "Start seeding torrent",
+            itemId: "seed"
         }
     ]
 });

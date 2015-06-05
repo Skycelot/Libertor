@@ -44,7 +44,8 @@ Ext.define("Libertor.view.SeedingTorrents", {
         {
             xtype: "button",
             icon: "resources/img/chatplus.png",
-            tooltip: "Download other torrent's files"
+            tooltip: "Download other torrent's files",
+            itemId: "downloadmore"
         },
         {
             xtype: "button",

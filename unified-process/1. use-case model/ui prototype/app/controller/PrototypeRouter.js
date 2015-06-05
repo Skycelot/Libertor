@@ -5,7 +5,8 @@ Ext.define("Libertor.controller.PrototypeRouter", {
     ],
     views: [
         "TorrentGroups", "DownloadingTorrents", "SeedingTorrents", "HistoryTorrents", "StatusBar",
-        "AddTorrent", "SelectTorrentFile", "TorrentSingleFileParameters", "TorrentMultiFileParameters"
+        "AddTorrent", "SelectTorrentFile", "TorrentSingleFileParameters", "TorrentMultiFileParameters",
+        "DownloadMore", "DownloadFromHistory", "SeedFromHistory"
     ],
     refs: [
         {
@@ -17,6 +18,15 @@ Ext.define("Libertor.controller.PrototypeRouter", {
         }, {
             ref: "addTorrent",
             selector: "addtorrent"
+        }, {
+            ref: "downloadMore",
+            selector: "downloadmore"
+        }, {
+            ref: "downloadFromHistory",
+            selector: "downloadfromhistory"
+        }, {
+            ref: "seedFromHistory",
+            selector: "seedfromhistory"
         }
     ],
     selectedTorrentGroup: "d",
@@ -34,6 +44,24 @@ Ext.define("Libertor.controller.PrototypeRouter", {
             },
             "addtorrent #confirm": {
                 click: this.confirmAddTorrent
+            },
+            "seedingtorrents #downloadmore": {
+                click: this.downloadMore
+            },
+            "downloadmore #confirm": {
+                click: this.confirmDownloadMore
+            },
+            "historytorrents #download": {
+                click: this.downloadFromHistory
+            },
+            "downloadfromhistory #confirm": {
+                click: this.confirmDownloadFromHistory
+            },
+            "historytorrents #seed": {
+                click: this.seedFromHistory
+            },
+            "seedfromhistory #confirm": {
+                click: this.confirmSeedFromHistory
             }
         });
         console.log("PrototypeRouter has been initialized.");
@@ -67,14 +95,7 @@ Ext.define("Libertor.controller.PrototypeRouter", {
                     actualIndex = false;
             }
             if (actualIndex) {
-                this.selectedTorrentGroup = groupId;    items: [
-        {
-            xtype: "button",
-            title: "OK",
-            itemId: "confirm"
-        }
-    ]
-
+                this.selectedTorrentGroup = groupId;
             }
         }
     },
@@ -84,9 +105,30 @@ Ext.define("Libertor.controller.PrototypeRouter", {
     },
     setTorrentParams: function () {
         this.getAddTorrent().removeAll();
-        this.getAddTorrent().add(Ext.create("widget.singlefileparams"));
+        this.getAddTorrent().add(Ext.create("widget.multifileparams"));
     },
     confirmAddTorrent: function () {
         this.getAddTorrent().close();
+    },
+    downloadMore: function() {
+        console.log("Download more button was clicked");
+        Ext.create("widget.downloadmore").show();
+    },
+    confirmDownloadMore: function () {
+        this.getDownloadMore().close();
+    },
+    downloadFromHistory: function() {
+        console.log("Download button was clicked");
+        Ext.create("widget.downloadfromhistory").show();
+    },
+    confirmDownloadFromHistory: function () {
+        this.getDownloadFromHistory().close();
+    },
+    seedFromHistory: function() {
+        console.log("Seed button was clicked");
+        Ext.create("widget.seedfromhistory").show();
+    },
+    confirmSeedFromHistory: function () {
+        this.getSeedFromHistory().close();
     }
 });

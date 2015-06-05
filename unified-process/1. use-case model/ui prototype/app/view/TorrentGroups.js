@@ -22,6 +22,5 @@ Ext.define("Libertor.view.TorrentGroups", {
             }
         ],
         expanded: true
-    },
-    value: "Downloading"
+    }
 });
