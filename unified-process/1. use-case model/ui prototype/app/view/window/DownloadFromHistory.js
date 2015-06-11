@@ -1,7 +1,7 @@
-Ext.define("Libertor.view.DownloadMore", {
+Ext.define("Libertor.view.window.DownloadFromHistory", {
     extend: "Ext.window.Window",
-    alias: "widget.downloadmore",
-    title: "Select more files to download",
+    alias: "widget.downloadfromhistory",
+    title: "Add torrent for downloading",
     modal: true,
     layout: "fit",
     items: [

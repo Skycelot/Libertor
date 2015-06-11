@@ -53,11 +53,11 @@ Ext.define("Libertor.view.DownloadingTorrents", {
         }, "-", {
             xtype: "button",
             icon: "resources/img/up.png",
-            tooltip: "Decrease torrent's order number"
+            tooltip: "Increase torrent's order number"
         }, {
             xtype: "button",
             icon: "resources/img/down.png",
-            tooltip: "Increase torrent's order number"
+            tooltip: "Decrease torrent's order number"
         }, "-", "Simultanious downloads: ", {
             xtype: "numberfield",
             minValue: 0,

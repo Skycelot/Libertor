@@ -1,7 +1,7 @@
-Ext.define("Libertor.view.SeedFromHistory", {
+Ext.define("Libertor.view.window.DownloadMore", {
     extend: "Ext.window.Window",
-    alias: "widget.seedfromhistory",
-    title: "Add torrent for seeding",
+    alias: "widget.downloadmore",
+    title: "Select more files to download",
     modal: true,
     layout: "fit",
     items: [

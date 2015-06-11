@@ -1,4 +1,4 @@
-Ext.define("Libertor.view.SelectTorrentFile", {
+Ext.define("Libertor.view.component.SelectTorrentFile", {
     extend: "Ext.container.Container",
     alias: "widget.selecttorrentfile",
     layout: {

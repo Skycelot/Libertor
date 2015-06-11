@@ -1,12 +1,14 @@
 Ext.define("Libertor.controller.PrototypeRouter", {
     extend: "Ext.app.Controller",
     stores: [
-        "DownloadingTorrents", "SeedingTorrents", "HistoryTorrents"
+        "DownloadingTorrents", "SeedingTorrents", "HistoryTorrents",
+        "TorrentFiles", "LocalFileSystem"
     ],
     views: [
         "TorrentGroups", "DownloadingTorrents", "SeedingTorrents", "HistoryTorrents", "StatusBar",
-        "AddTorrent", "SelectTorrentFile", "TorrentSingleFileParameters", "TorrentMultiFileParameters",
-        "DownloadMore", "DownloadFromHistory", "SeedFromHistory"
+        "window.AddTorrent", "window.DownloadMore", "window.DownloadFromHistory", "window.SeedFromHistory",
+        "component.SelectTorrentFile", "component.TorrentSingleFileParameters", "component.TorrentMultiFileParameters",
+        "component.SelectLocalFolder", "component.LocalFolderSelector"
     ],
     refs: [
         {
@@ -27,6 +29,9 @@ Ext.define("Libertor.controller.PrototypeRouter", {
         }, {
             ref: "seedFromHistory",
             selector: "seedfromhistory"
+        }, {
+            ref: "localFolderSelector",
+            selector: "localfolderselector"
         }
     ],
     selectedTorrentGroup: "d",
@@ -62,6 +67,12 @@ Ext.define("Libertor.controller.PrototypeRouter", {
             },
             "seedfromhistory #confirm": {
                 click: this.confirmSeedFromHistory
+            },
+            "selectlocalfolder button": {
+                click: this.openLocalFolderSelector
+            },
+            "localfolderselector button": {
+                click: this.selectLocalFolder
             }
         });
         console.log("PrototypeRouter has been initialized.");
@@ -105,30 +116,37 @@ Ext.define("Libertor.controller.PrototypeRouter", {
     },
     setTorrentParams: function () {
         this.getAddTorrent().removeAll();
-        this.getAddTorrent().add(Ext.create("widget.multifileparams"));
+        this.getAddTorrent().add(Ext.create("widget.singlefileparams"));
+        //this.getAddTorrent().add(Ext.create("widget.multifileparams"));
     },
     confirmAddTorrent: function () {
         this.getAddTorrent().close();
     },
-    downloadMore: function() {
+    downloadMore: function () {
         console.log("Download more button was clicked");
         Ext.create("widget.downloadmore").show();
     },
     confirmDownloadMore: function () {
         this.getDownloadMore().close();
     },
-    downloadFromHistory: function() {
+    downloadFromHistory: function () {
         console.log("Download button was clicked");
         Ext.create("widget.downloadfromhistory").show();
     },
     confirmDownloadFromHistory: function () {
         this.getDownloadFromHistory().close();
     },
-    seedFromHistory: function() {
+    seedFromHistory: function () {
         console.log("Seed button was clicked");
         Ext.create("widget.seedfromhistory").show();
     },
     confirmSeedFromHistory: function () {
         this.getSeedFromHistory().close();
+    },
+    openLocalFolderSelector: function () {
+        Ext.create("widget.localfolderselector").show();
+    },
+    selectLocalFolder: function () {
+        this.getLocalFolderSelector().close();
     }
 });
