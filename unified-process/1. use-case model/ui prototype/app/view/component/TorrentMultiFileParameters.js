@@ -1,6 +1,9 @@
 Ext.define("Libertor.view.component.TorrentMultiFileParameters", {
     extend: "Ext.container.Container",
     alias: "widget.multifileparams",
+    requires: [
+        "Libertor.view.component.SelectLocalFolder", "Libertor.view.component.TorrentFileMenu"
+    ],
     layout: {
         type: "vbox",
         align: "right"
@@ -30,7 +33,13 @@ Ext.define("Libertor.view.component.TorrentMultiFileParameters", {
                             flex: 1
                         }
                     ],
-                    store: "TorrentFiles"
+                    store: "TorrentFiles",
+                    listeners: {
+                        itemcontextmenu: function (object, record, item, index, e) {
+                            e.stopEvent();
+                            Ext.create("widget.torrentfilemenu").showAt(e.getXY());
+                        }
+                    }
 
                 }
             ]

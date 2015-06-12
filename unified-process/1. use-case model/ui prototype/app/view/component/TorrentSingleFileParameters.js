@@ -1,6 +1,9 @@
 Ext.define("Libertor.view.component.TorrentSingleFileParameters", {
     extend: "Ext.container.Container",
     alias: "widget.singlefileparams",
+    requires: [
+        "Libertor.view.component.LocalFolderSelector"
+    ],
     layout: {
         type: "vbox",
         align: "right"
@@ -17,6 +20,7 @@ Ext.define("Libertor.view.component.TorrentSingleFileParameters", {
                 {
                     xtype: "textfield",
                     fieldLabel: "File name",
+                    labelWidth: 90
                 }, {
                     xtype: "selectlocalfolder"
                 }

@@ -6,9 +6,8 @@ Ext.define("Libertor.controller.PrototypeRouter", {
     ],
     views: [
         "TorrentGroups", "DownloadingTorrents", "SeedingTorrents", "HistoryTorrents", "StatusBar",
-        "window.AddTorrent", "window.DownloadMore", "window.DownloadFromHistory", "window.SeedFromHistory",
-        "component.SelectTorrentFile", "component.TorrentSingleFileParameters", "component.TorrentMultiFileParameters",
-        "component.SelectLocalFolder", "component.LocalFolderSelector"
+        "window.AddTorrent", "window.DownloadMore", "window.DownloadFromHistory", "window.SeedFromHistory", "window.SpeedLimits",
+        "component.SelectTorrentFile", "component.TorrentSingleFileParameters", "component.TorrentMultiFileParameters"
     ],
     refs: [
         {
@@ -32,6 +31,9 @@ Ext.define("Libertor.controller.PrototypeRouter", {
         }, {
             ref: "localFolderSelector",
             selector: "localfolderselector"
+        }, {
+            ref: "speedLimits",
+            selector: "speedlimits"
         }
     ],
     selectedTorrentGroup: "d",
@@ -68,11 +70,14 @@ Ext.define("Libertor.controller.PrototypeRouter", {
             "seedfromhistory #confirm": {
                 click: this.confirmSeedFromHistory
             },
-            "selectlocalfolder button": {
-                click: this.openLocalFolderSelector
-            },
             "localfolderselector button": {
                 click: this.selectLocalFolder
+            },
+            "statusbar button": {
+                focus: this.openSpeedLimits
+            },
+            "speedlimits #applylimits": {
+                click: this.applySpeedLimits
             }
         });
         console.log("PrototypeRouter has been initialized.");
@@ -143,10 +148,13 @@ Ext.define("Libertor.controller.PrototypeRouter", {
     confirmSeedFromHistory: function () {
         this.getSeedFromHistory().close();
     },
-    openLocalFolderSelector: function () {
-        Ext.create("widget.localfolderselector").show();
-    },
     selectLocalFolder: function () {
         this.getLocalFolderSelector().close();
+    },
+    openSpeedLimits: function () {
+        Ext.create("widget.speedlimits").show();
+    },
+    applySpeedLimits: function () {
+        this.getSpeedLimits().close();
     }
 });

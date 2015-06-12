@@ -1,6 +1,9 @@
 Ext.define("Libertor.view.component.SelectLocalFolder", {
     extend: "Ext.form.FieldContainer",
     alias: "widget.selectlocalfolder",
+    requires: [
+        "Libertor.view.component.LocalFolderSelector"
+    ],
     layout: "hbox",
     items: [
         {
@@ -10,7 +13,10 @@ Ext.define("Libertor.view.component.SelectLocalFolder", {
         }, {
             xtype: "button",
             text: "Select",
-            margin: "0 0 0 5"
+            margin: "0 0 0 5",
+            handler: function () {
+                Ext.create("widget.localfolderselector").show();
+            }
         }
     ]
 });
