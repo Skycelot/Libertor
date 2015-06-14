@@ -1,3 +1,0 @@
-1. User renames files, moves to other location or removes from external file manager.
-2. The bittorrent notices changes and remove affected files from seeding torrent content.
-3. If no more files in the seeding torrent than removes the torrent from the seeding list.
