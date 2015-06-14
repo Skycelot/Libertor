@@ -1,0 +1,1 @@
+Establishes connections with participants, transport torrent content from participants to Downloader adn Seeder.
